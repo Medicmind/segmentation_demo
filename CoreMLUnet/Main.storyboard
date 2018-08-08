@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="McS-pA-9Wd">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Medicmind Segmentation Demo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreMLSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-eS-1Ub" customClass="CameraPreviewView" customModule="CoreMLSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jxg-8L-Fjc">
+                                        <rect key="frame" x="0.0" y="65" width="414" height="414"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Jxg-8L-Fjc" secondAttribute="height" multiplier="1:1" id="QAY-d5-tXV"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Jxg-8L-Fjc" firstAttribute="trailing" secondItem="yhJ-eS-1Ub" secondAttribute="trailing" id="aJF-a4-tJF"/>
+                                    <constraint firstAttribute="width" secondItem="yhJ-eS-1Ub" secondAttribute="height" multiplier="1:1" id="aaJ-yy-atx"/>
+                                    <constraint firstItem="Jxg-8L-Fjc" firstAttribute="top" secondItem="yhJ-eS-1Ub" secondAttribute="top" constant="65" id="pxn-EK-yfq"/>
+                                    <constraint firstItem="Jxg-8L-Fjc" firstAttribute="leading" secondItem="yhJ-eS-1Ub" secondAttribute="leading" id="sWd-iF-Zym"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hd-G0-rih">
+                                <rect key="frame" x="333" y="669" width="61" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Button" image="medicmind180x180.png"/>
+                                <connections>
+                                    <segue destination="Ipv-aX-pjP" kind="show" id="Ftd-QH-ffp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yhJ-eS-1Ub" secondAttribute="trailing" id="28y-3l-Wbg"/>
+                            <constraint firstItem="yhJ-eS-1Ub" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BJC-wR-L3O"/>
+                            <constraint firstItem="yhJ-eS-1Ub" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QYp-py-ZFf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medicmind Segmentation Demo" id="z6x-FO-eEU"/>
+                    <connections>
+                        <outlet property="cameraPreview" destination="yhJ-eS-1Ub" id="16r-x2-WJ6"/>
+                        <outlet property="predictionView" destination="Jxg-8L-Fjc" id="3Zj-86-J13"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373.91304347826087" y="-221.73913043478262"/>
+        </scene>
+        <!--Medicmind Segmentation Demo-->
+        <scene sceneID="USy-j2-VlU">
+            <objects>
+                <viewController id="Ipv-aX-pjP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MDD-Pg-Iq4"/>
+                        <viewControllerLayoutGuide type="bottom" id="P0f-Ej-EHr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nnn-eX-UWh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="20060523_50408_0100_PPmask.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3g-Ig-aSf">
+                                <rect key="frame" x="87" y="105" width="240" height="231"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Demonstrates the medicmind segmentation classifier. Places white over the optic disc. Uses UNet model. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-bj-zbg">
+                                <rect key="frame" x="62" y="366" width="296" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="medicmind.tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97U-uI-j4e">
+                                <rect key="frame" x="146" y="485" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.56078431370000004" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medicmind Segmentation Demo" id="bfz-sr-Cmf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qok-lv-WtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.985507246377" y="-289.4021739130435"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yei-HR-d08">
+            <objects>
+                <navigationController id="McS-pA-9Wd" customClass="NavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="peq-KU-ru1">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vbt-00-Gq2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTw-5P-XfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-729" y="-207"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="20060523_50408_0100_PPmask.png" width="256" height="256"/>
+        <image name="medicmind180x180.png" width="180" height="180"/>
+    </resources>
+</document>
