@@ -3,7 +3,7 @@
 Demonstrates how to incorporate a trained segmentation model from Medicminds AI platform (https://www.medicmind.tech) into an iPhone App.
 The neural network trained detects the optic disc in a retina using your camera. In the future will add the ability to use images from your gallery.
 
-![retina](IMG_0312_300.png)
+![retina](output4.gif)
 
 To incorporate your own model simply replace the 'checkpoint_weights.mlmodel' with your own one from Medicmind.
 
