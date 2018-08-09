@@ -5,4 +5,6 @@ The neural network trained detects the optic disc in a retina
 
 ![retina](IMG_0312_300.png)
 
+To incorporate your own model simply replace the 'checkpoint_weights.mlmodel' with your own one from Medicmind.
+
 Medicmind converts a keras model into a ios metal model that can be incorporated into an app.
